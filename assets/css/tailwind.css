@@ -1,10 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Typography fonts */
+    --font-display: 'Barlow Condensed', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-body: 'Urbanist', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+    /* Global palette */
+    --base: 220 14% 96%;           /* #f3f4f6 */
+
+    --background: 220 14% 96%;     /* base */
     --foreground: 240 10% 3.9%;
 
     --muted: 240 4.8% 95.9%;
@@ -13,20 +22,20 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --card: 0 0% 100%;
+    --card: 220 14% 96%;
     --card-foreground: 240 10% 3.9%;
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
 
-    --primary: 240 5.9% 10%;
+    --primary: 221 83% 53%;        /* #2563eb */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 333 72% 51%;      /* #db2777 */
+    --secondary-foreground: 0 0% 98%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 48 96% 53%;          /* #facc15 */
+    --accent-foreground: 24 9.8% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -87,5 +96,23 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-size: 1rem; /* 16px */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  h1 { font-size: 2.25rem; /* 36px */ }
+  h2 { font-size: 1.875rem; /* 30px */ }
+  h3 { font-size: 1.5rem; /* 24px */ }
+  h4 { font-size: 1.2rem; /* 20px */ }
+}
+
+@layer utilities {
+  .display {
+    font-family: var(--font-display);
+    font-size: 3rem; /* 48px */
   }
 }
