@@ -1,11 +1,8 @@
 <template>
   <ul :class="[level !== 0 && 'pl-4']">
     <li v-for="link in links" :key="link.id" class="pt-2">
-      <NuxtLink
-        :to="`#${link.id}`"
-        class="text-muted-foreground hover:text-primary transition-all"
-        :class="[activeHeadings.includes(link.id) && 'text-primary']"
-      >
+      <NuxtLink :to="`#${link.id}`" class="text-muted-foreground hover:text-primary transition-all"
+        :class="[activeHeadings.includes(link.id) && 'text-primary']">
         {{ link.text }}
       </NuxtLink>
       <TocTree v-if="link.children" :links="link.children" :level="level + 1" />
